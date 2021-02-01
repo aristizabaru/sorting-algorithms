@@ -10,22 +10,37 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int interval = 1, temp, i, j;
+	int interval = 1, length = (int)size - 1;
+	int valueToInsert, inner, outer;
 
 	if (array == NULL || size < 2)
 		return;
 
-	for (interval = interval * 3 + 1; interval > 0; interval = interval / 3)
+	/* calculate interval*/
+	while (interval < length / 3)
+		interval = interval * 3 + 1;
+
+	while (interval > 0)
 	{
-		for (i = interval; i < (int)size; i += 1)
+		for (outer = interval; outer < length; outer++)
 		{
-			temp = array[i];
-			for (j = i; j >= interval && array[j - interval] > temp; j -= interval)
+			/* select value to be inserted */
+			valueToInsert = array[outer];
+			inner = outer;
+
+			/*shift element towards right*/
+			while (inner > interval - 1 && array[inner - interval] >= valueToInsert)
 			{
-				array[j] = array[j - interval];
+				array[inner] = array[inner - interval];
+				inner = inner - interval;
 			}
-			array[j] = temp;
+
+			/* insert the number at hole position */
+			array[inner] = valueToInsert;
 		}
+
+		/* calculate interval*/
+		interval = (interval - 1) / 3;
 		print_array(array, size);
 	}
 }
