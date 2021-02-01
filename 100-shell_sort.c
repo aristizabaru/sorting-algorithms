@@ -12,7 +12,10 @@ void shell_sort(int *array, size_t size)
 {
 	int interval = 1, temp, i, j;
 
-	for (interval = interval * 3 + 1; interval > 0; interval = (interval - 1) / 3)
+	if (array == NULL || size < 2)
+		return;
+
+	for (interval = interval * 3 + 1; interval > 0; interval = interval / 3)
 	{
 		for (i = interval; i < (int)size; i += 1)
 		{
