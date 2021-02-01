@@ -10,7 +10,7 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int interval = 1, length = (int)size - 1;
+	int interval = 1, length = (int)size;
 	int valueToInsert, inner, outer;
 
 	if (array == NULL || size < 2)
