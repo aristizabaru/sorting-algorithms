@@ -2,7 +2,7 @@
 
 /**
  * selection_sort - sort an array using selection sort algorithm
- * 
+ *
  * @array: Pointer to array of int
  * @size: Size of the array
  */

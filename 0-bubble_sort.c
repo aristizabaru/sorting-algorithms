@@ -2,7 +2,7 @@
 
 /**
  * bubble_sort - sort an array using bubble sort algorithm
- * 
+ *
  * @array: Pointer to array of int
  * @size: Size of the array
  */

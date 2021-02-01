@@ -2,8 +2,9 @@
 #include <unistd.h>
 
 /**
- * insertion_sort_list - sort a doubly linked list using insertion sort algorithm
- * 
+ * insertion_sort_list - sort a doubly linked
+ * list using insertion sort algorithm
+ *
  * @list: Head to the list
  */
 void insertion_sort_list(listint_t **list)
