@@ -9,12 +9,9 @@
  */
 void counting_sort(int *array, size_t size)
 {
-	int k = 0;
-	int i;
-	int *count = NULL;
-	int *sort = NULL;
+	int k = 0, i;
+	int *count = NULL, *sort = NULL;
 
-	/* check array and size */
 	if (array == NULL || size < 2)
 		return;
 	/* find largest number "k"*/
@@ -45,7 +42,6 @@ void counting_sort(int *array, size_t size)
 	/* place values in sort array */
 	for (i = (int)size - 1; i >= 0; i--)
 		sort[--count[array[i]]] = array[i];
-
 	/* copy sorted values to original array */
 	for (i = 0; i < (int)size; i++)
 		array[i] = sort[i];
