@@ -7,17 +7,30 @@
  */
 void merge_sort(int *array, size_t size)
 {
-	int mid = size / 2;
 	int *temp = NULL;
 
 	if (array == NULL || size < 2)
 		return;
 
 	temp = malloc(size * sizeof(int));
-	merge_sort(array, mid);
-	merge_sort(array + mid, size - mid);
-	merge(array, size, mid, temp);
+	split(array, size, temp);
 	free(temp);
+}
+/**
+ * split - split the array in smaller pieces
+ * @array: Pointer to array of int
+ * @size: upper bound
+ * @temp: target array to merge
+ */
+void split(int *array, int size, int *temp)
+{
+	int mid = size / 2;
+
+	if (size < 2)
+		return;
+	split(array, mid, temp);
+	split(array + mid, size - mid, temp);
+	merge(array, size, mid, temp);
 }
 /**
  * merge - merge two arrays to sort them
