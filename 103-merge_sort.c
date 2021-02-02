@@ -8,10 +8,12 @@
 void merge_sort(int *array, size_t size)
 {
 	int mid = size / 2;
-	int *temp = malloc(size * sizeof(int));
+	int *temp = NULL;
 
 	if (array == NULL || size < 2)
 		return;
+
+	temp = malloc(size * sizeof(int));
 	merge_sort(array, mid);
 	merge_sort(array + mid, size - mid);
 	merge(array, size, mid, temp);
