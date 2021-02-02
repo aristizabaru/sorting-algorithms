@@ -22,6 +22,7 @@ void merge_sort(int *array, size_t size)
  * @array: Pointer to array of int
  * @mid: lower bound
  * @size: upper bound
+ * @temp: target array to merge
  */
 void merge(int *array, int size, int mid, int *temp)
 {
