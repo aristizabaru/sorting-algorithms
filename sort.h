@@ -36,5 +36,6 @@ void swap(listint_t **list, listint_t *node);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void merge(int *array, int size, int mid, int *temp);
+void split(int *array, int size, int *temp);
 
 #endif
