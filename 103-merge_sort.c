@@ -8,12 +8,14 @@
 void merge_sort(int *array, size_t size)
 {
 	int mid = size / 2;
+	int *temp = malloc(size * sizeof(int));
 
 	if (array == NULL || size < 2)
 		return;
 	merge_sort(array, mid);
 	merge_sort(array + mid, size - mid);
-	merge(array, size, mid);
+	merge(array, size, mid, temp);
+	free(temp);
 }
 /**
  * merge - merge two arrays to sort them
@@ -21,10 +23,9 @@ void merge_sort(int *array, size_t size)
  * @mid: lower bound
  * @size: upper bound
  */
-void merge(int *array, int size, int mid)
+void merge(int *array, int size, int mid, int *temp)
 {
 	int i, j, k;
-	int *temp = malloc(size * sizeof(int));
 
 	printf("Merging...\n");
 	printf("[left]: ");
@@ -44,5 +45,4 @@ void merge(int *array, int size, int mid)
 	}
 	printf("[Done]: ");
 	print_array(array, size);
-	free(temp);
 }
