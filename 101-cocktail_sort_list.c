@@ -3,8 +3,7 @@
 /**
  * cocktail_sort_list - sorts an array of integers in ascending order
  * using the Cocktail shaker sort
- * @array: The array to sort
- * @size: The size of the array
+ * @list: doubly linked list head
  *
  * Return: void
  */
