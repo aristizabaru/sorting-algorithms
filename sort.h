@@ -47,4 +47,6 @@ void recbitonic(int low, int c, int dir, int *array);
 void bitonicmerge(int low, int c, int dir, int *array);
 void compare(int i, int j, int dir, int *array);
 void quick_sort_hoare(int *array, size_t size);
+void quicksort_hoare(int *array, int lo, int hi, int size);
+int partition_hoare(int *array, int lo, int hi, int size);
 #endif
