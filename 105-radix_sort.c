@@ -10,10 +10,9 @@ void radix_sort(int *a, size_t n)
 	int bucket[10][10], bucket_cnt[10];
 	int i, j, k, r, NOP = 0, divisor = 1, lar, pass;
 
-	lar = get_max(a, n);
 	if (a == NULL || n < 2)
 		return;
-
+	lar = get_max(a, n);
 	while (lar > 0)
 	{
 		NOP++;
