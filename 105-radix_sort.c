@@ -2,49 +2,57 @@
 
 /**
  * radix_sort - sort an array using radix sort algorithm
- * @array: Pointer to array of int
- * @size: Size of the array
+ * @a: Pointer to array of int
+ * @n: Size of the array
  */
-void radix_sort(int *array, size_t size)
+void radix_sort(int *a, size_t n)
 {
-	int max = 0, i, pass;
+	int bucket[10][10], bucket_cnt[10];
+	int i, j, k, r, NOP = 0, divisor = 1, lar, pass;
+	lar = get_max(a, n);
 
-	if (array == NULL || size < 2)
-		return;
-	/* find max number */
-	for (i = 0; i < (int)size; i++)
-		if (max < array[i])
-			max = array[i];
-	/* pass sorting items with LSD */
-	for (pass = 1; max / pass > 0; pass *= 10)
+	while (lar > 0)
 	{
-		count_sort(array, size, pass);
-		print_array(array, size);
+		NOP++;
+		lar /= 10;
+	}
+	for (pass = 0; pass < NOP; pass++)
+	{
+		for (i = 0; i < 10; i++)
+		{
+			bucket_cnt[i] = 0;
+		}
+		for (i = 0; i < (int)n; i++)
+		{
+			r = (a[i] / divisor) % 10;
+			bucket[r][bucket_cnt[r]] = a[i];
+			bucket_cnt[r] += 1;
+		}
+		i = 0;
+		for (k = 0; k < 10; k++)
+		{
+			for (j = 0; j < bucket_cnt[k]; j++)
+			{
+				a[i] = bucket[k][j];
+				i++;
+			}
+		}
+		divisor *= 10;
+		print_array(a, n);
 	}
 }
 /**
  * count_sort - bucket count for radix sort
- * @array: Pointer to array of int
+ * @a: Pointer to array of int
  * @n: Size of the array
- * @pass: number of current pass according to digit
  */
-void count_sort(int *array, int n, int pass)
+int get_max(int a[], int n)
 {
-	int count[10] = {0};
 	int i;
-	int *b = malloc(sizeof(int) * n);
+	int max = a[0];
 
-	if (!b)
-		return;
-	for (i = 0; i < n; i++)
-		b[i] = 0;
-	for (i = 0; i < n; i++)
-		++count[(array[i] / pass) % 10];
-	for (i = 1; i <= n; i++)
-		count[i] = count[i] + count[i - 1];
-	for (i = n - 1; i >= 0; i--)
-		b[--count[(array[i] / pass) % 10]] = array[i];
-	for (i = 0; i < n; i++)
-		array[i] = b[i];
-	free(b);
+	for (i = 1; i < n; i++)
+		if (a[i] > max)
+			max = a[i];
+	return (max);
 }
