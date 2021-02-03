@@ -40,4 +40,6 @@ void split(int *array, int size, int *temp);
 void heap_sort(int *array, size_t size);
 void downheap(int *array, int n, int i);
 int max(int *array, int n, int i, int j, int k);
+void radix_sort(int *array, size_t size);
+void count_sort(int *array, int n, int pass);
 #endif
