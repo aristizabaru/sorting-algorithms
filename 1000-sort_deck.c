@@ -6,6 +6,9 @@
  */
 void sort_deck(deck_node_t **deck)
 {
+	/* check list */
+	if (deck == NULL || *deck == NULL)
+		return;
 	sort_values(deck);
 	sort_figures(deck);
 }
