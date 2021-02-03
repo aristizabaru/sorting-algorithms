@@ -16,7 +16,7 @@ void quick_sort_hoare(int *array, size_t size)
 }
 
 /**
- * quicksort - sorts a partition of an array of integers
+ * quicksort_hoare - sorts a partition of an array of integers
  * @array: array to sort
  * @lo: lowest index of the partition to sort
  * @hi: highest index of the partition to sort
@@ -37,7 +37,7 @@ void quicksort_hoare(int *array, int lo, int hi, int size)
 }
 
 /**
- * partition - finds the partition for the quicksort using the Lomuto scheme
+ * partition_hoare- finds the partition using the Lomuto scheme
  * @array: array to sort
  * @lo: lowest index of the partition to sort
  * @hi: highest index of the partition to sort
@@ -55,13 +55,11 @@ int partition_hoare(int *array, int lo, int hi, int size)
 	j = hi + 1;
 	for (;;)
 	{
-		do
-		{
+		do {
 			i++;
 		} while (array[i] < pivot);
 
-		do
-		{
+		do {
 			j--;
 		} while (array[j] > pivot);
 
