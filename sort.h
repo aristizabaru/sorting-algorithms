@@ -42,4 +42,8 @@ void downheap(int *array, int n, int i);
 int max(int *array, int n, int i, int j, int k);
 void radix_sort(int *array, size_t size);
 int get_max(int a[], int n);
+void bitonic_sort(int *array, size_t size);
+void recbitonic(int low, int c, int dir, int *array);
+void bitonicmerge(int low, int c, int dir, int *array);
+void compare(int i, int j, int dir, int *array);
 #endif
