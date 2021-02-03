@@ -9,7 +9,10 @@ void radix_sort(int *a, size_t n)
 {
 	int bucket[10][10], bucket_cnt[10];
 	int i, j, k, r, NOP = 0, divisor = 1, lar, pass;
+
 	lar = get_max(a, n);
+	if (a == NULL || n < 2)
+		return;
 
 	while (lar > 0)
 	{
@@ -42,9 +45,10 @@ void radix_sort(int *a, size_t n)
 	}
 }
 /**
- * count_sort - bucket count for radix sort
+ * get_max - bucket count for radix sort
  * @a: Pointer to array of int
  * @n: Size of the array
+ * Return: max value from array
  */
 int get_max(int a[], int n)
 {
