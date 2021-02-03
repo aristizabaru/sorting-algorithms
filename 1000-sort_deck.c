@@ -7,7 +7,7 @@
 void sort_deck(deck_node_t **deck)
 {
 	/* check list */
-	if (deck == NULL || *deck == NULL)
+	if (deck == NULL || *deck == NULL || (*deck)->next == NULL)
 		return;
 	sort_values(deck);
 	sort_figures(deck);
