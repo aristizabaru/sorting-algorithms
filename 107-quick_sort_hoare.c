@@ -12,7 +12,7 @@ void quick_sort_hoare(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-	quicksort(array, 0, size - 1, size);
+	quicksort_hoare(array, 0, size - 1, size);
 }
 
 /**
@@ -24,15 +24,15 @@ void quick_sort_hoare(int *array, size_t size)
  *
  * Return: void
  */
-void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
+void quicksort_hoare(int *array, int lo, int hi, int size)
 {
-	ssize_t pivot;
+	int pivot;
 
 	if (lo < hi)
 	{
-		pivot = partition(array, lo, hi, size);
-		quicksort(array, lo, pivot - 1, size);
-		quicksort(array, pivot + 1, hi, size);
+		pivot = partition_hoare(array, lo, hi, size);
+		quicksort_hoare(array, lo, pivot, size);
+		quicksort_hoare(array, pivot + 1, hi, size);
 	}
 }
 
@@ -45,33 +45,31 @@ void quicksort(int *array, ssize_t lo, ssize_t hi, size_t size)
  *
  * Return: index of the partition
  */
-size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
+int partition_hoare(int *array, int lo, int hi, int size)
 {
-	ssize_t i, j;
+	int i, j;
 	int swap, pivot;
 
-	pivot = array[hi];
+	pivot = array[lo];
 	i = lo - 1;
-	for (j = lo; j < hi; j++)
+	j = hi + 1;
+	for (;;)
 	{
-		if (array[j] < pivot)
+		do
 		{
 			i++;
-			if (i != j)
-			{
-				swap = array[i];
-				array[i] = array[j];
-				array[j] = swap;
-				print_array(array, size);
-			}
-		}
-	}
-	if (array[hi] < array[i + 1])
-	{
-		swap = array[i + 1];
-		array[i + 1] = array[hi];
-		array[hi] = swap;
+		} while (array[i] < pivot);
+
+		do
+		{
+			j--;
+		} while (array[j] > pivot);
+
+		if (i >= j)
+			return (j);
+		swap = array[i];
+		array[i] = array[j];
+		array[j] = swap;
 		print_array(array, size);
 	}
-	return (i + 1);
 }
