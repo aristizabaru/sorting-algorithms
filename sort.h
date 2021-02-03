@@ -37,5 +37,7 @@ void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void merge(int *array, int size, int mid, int *temp);
 void split(int *array, int size, int *temp);
-
+void heap_sort(int *array, size_t size);
+void downheap(int *array, int n, int i);
+int max(int *array, int n, int i, int j, int k);
 #endif
