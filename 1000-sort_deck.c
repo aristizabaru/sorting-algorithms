@@ -55,7 +55,6 @@ void sort_figures(deck_node_t **deck)
 		else
 		{
 			sorted = sorted->next;
-			unsorted = sorted;
 			if (sorted && sorted->next)
 				unsorted = sorted->next;
 		}
@@ -104,7 +103,6 @@ void sort_values(deck_node_t **deck)
 		else
 		{
 			sorted = sorted->next;
-			unsorted = sorted;
 			if (sorted && sorted->next)
 				unsorted = sorted->next;
 		}
