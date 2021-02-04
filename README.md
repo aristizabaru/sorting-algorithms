@@ -451,7 +451,7 @@ alex@/tmp/sort$
 
 ### 5. Cocktail shaker sort
 
-**[100-shell_sort.c](100-shell_sort.c)**
+**[100-shell_sort.c](100-shell_sort.c)**  
 **[101-O](101-O)**
 
 Write a function that sorts a doubly linked list of integers in ascending order using the [Cocktail shaker sort](https://en.wikipedia.org/wiki/Cocktail_shaker_sort) algorithm.
@@ -556,7 +556,7 @@ alex@/tmp/sort$
 
 ### 6. Counting sort
 
-**[102-counting_sort.c](102-counting_sort.c)**
+**[102-counting_sort.c](102-counting_sort.c)**  
 **[102-O](102-O)**
 
 Write a function that sorts an array of integers in ascending order using the [Counting sort](https://en.wikipedia.org/wiki/Counting_sort) algorithm.
@@ -608,7 +608,7 @@ alex@/tmp/sort$
 
 ### 7. Merge sort
 
-**[103-merge_sort.c](103-merge_sort.c)**
+**[103-merge_sort.c](103-merge_sort.c)**  
 **[103-O](103-O)**
 
 Write a function that sorts an array of integers in ascending order using the [Merge sort](https://en.wikipedia.org/wiki/Merge_sort) algorithm.
@@ -697,7 +697,7 @@ alex@/tmp/sort$
 
 ### 8. Heap sort
 
-**[104-heap_sort.c](104-heap_sort.c)**
+**[104-heap_sort.c](104-heap_sort.c)**  
 **[104-O](104-O)**
 
 Write a function that sorts an array of integers in ascending order using the [Heap sort](https://en.wikipedia.org/wiki/Heapsort) algorithm.
@@ -819,7 +819,7 @@ alex@/tmp/sort$
 
 ### 10. Bitonic sort
 
-**[106-bitonic_sort.c](106-bitonic_sort.c)**
+**[106-bitonic_sort.c](106-bitonic_sort.c)**  
 **[106-O](106-O)**
 
 Write a function that sorts an array of integers in ascending order using the [Bitonic sort](https://en.wikipedia.org/wiki/Bitonic_sorter) algorithm.
@@ -930,7 +930,7 @@ alex@/tmp/sort$
 
 ### 11. Quick Sort - Hoare Partition scheme
 
-**[107-quick_sort_hoare.c](107-quick_sort_hoare.c)**
+**[107-quick_sort_hoare.c](107-quick_sort_hoare.c)**  
 **[107-O](107-O)**
 
 Write a function that sorts an array of integers in ascending order using the [Quick sort](https://en.wikipedia.org/wiki/Quicksort) algorithm.
@@ -1035,7 +1035,7 @@ alex@/tmp/sort$
 
 ### 12. Dealer
 
-**[1000-sort_deck.c](1000-sort_deck.c)**
+**[1000-sort_deck.c](1000-sort_deck.c)**  
 **[deck.h](deck.h)**
 
 Write a function that sorts a deck of cards.
